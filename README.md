@@ -22,7 +22,7 @@ A blog app created with RoR.
 
 ## Author
 
-👤 *Mumenya Nyamu* 🧑🏻‍💻
+👤 *Alejandro Torres* 🧑🏻‍💻
 - GitHub: [@aizijicod](https://github.com/aizjicod)
 - Twitter: [@aizijijr](https://twitter.com/aizijijr)
 - LinkedIn: [Alejandro Torres](https://www.linkedin.com/in/aiziji/)
