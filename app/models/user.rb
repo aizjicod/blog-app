@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   def init
     return unless new_record?
+
     self.posts_counter = 0
   end
 
