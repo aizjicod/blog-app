@@ -1,0 +1,25 @@
+.user-container {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+}
+
+.user-photo {
+  border: 2px solid #000;
+  height: 100%;
+}
+
+.user-information {
+  border: 2px solid #000;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: baseline;
+}
+
+.user-information h2 {
+  font-size: 2em;
+  font-weight: 900;
+}
