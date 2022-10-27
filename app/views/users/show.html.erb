@@ -1,2 +1,17 @@
 <h1>users</h1>
 <h2>this page shows the user information</h2>
+<%= link_to "Back", :back , :class => "link-pages" %>
+<div id="show-user">
+  <%= render @user %>
+  <div class="user-bio">
+    <p class="bio-title">Bio:</p>
+    <p class="bio-information"><%= @user.bio %></p>
+  </div>
+  <ul class="post-ul">
+    <%= render partial: "posts/post", collection: @user.recent_posts %>
+  </ul>
+  <%= link_to user_posts_url(user_id: @user.id) do %>
+    <button class="post-button">See all posts</button>
+  <% end %>
+</div>
+

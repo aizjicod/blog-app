@@ -1,2 +1,7 @@
 <h1>users</h1>
 <h2>this is a list of users</h2>
+<% @users.each do |user| %>
+  <%= link_to(user, :class => "link-pages") do %>
+   <%= render user %>
+  <% end %>
+<% end %>
