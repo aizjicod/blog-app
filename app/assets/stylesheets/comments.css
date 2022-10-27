@@ -1,0 +1,9 @@
+.comments-ul {
+  width: 80%;
+  border: 2px solid #000;
+}
+
+.comment-li {
+  display: flex;
+  gap: 18px;
+}
