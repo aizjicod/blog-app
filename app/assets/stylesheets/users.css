@@ -1,4 +1,5 @@
 .user-container {
+  width: 100%;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -22,4 +23,44 @@
 .user-information h2 {
   font-size: 2em;
   font-weight: 900;
+}
+
+#show-user {
+  display: flex;
+  width: 100%;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+
+.user-bio {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 2px solid #000;
+}
+
+.bio-title {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.bio-information {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.3em;
+}
+
+.post-button {
+  background: transparent;
+  border: 2px solid #000;
+  padding: 0.5em 0.8em;
+}
+.post-button:hover {
+  background: #000;
+  color: #fff;
 }

@@ -2,12 +2,6 @@
 <h2>this is a list of users</h2>
 <% @users.each do |user| %>
   <%= link_to user do %>
-    <div class="user-container">
-      <img src="<%= user.photo %>" alt="icon for <%= user.name[0...5]%>...">
-      <div class="user-information">
-        <h2> <%= user.name %> </h2>
-        <p>number of posts: <%= user.posts_counter%></p>
-      </div>
-    </div>
+   <%= render user %>
   <% end %>
 <% end %>

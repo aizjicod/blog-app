@@ -1,0 +1,34 @@
+/* posts styles */
+.post-ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.post-container {
+  width: 80%;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #000;
+}
+
+.post-number {
+  width: 100%;
+  height: min-content;
+}
+
+.post-description {
+  width: 100%;
+  padding: 12px;
+}
+
+.post-interactions {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
