@@ -1,0 +1,17 @@
+<h1>users</h1>
+<h2>create a new post</h2>
+<%= form_with model: Post, url: user_posts_url do |form| %>
+   <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_field :text %>
+  </div>
+
+  <div>
+    <%= form.submit "Submit" %><br>
+  </div>
+<% end %>
