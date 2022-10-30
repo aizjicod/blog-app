@@ -1,8 +1,4 @@
 <li class="comment-li" >
-  <% unless comment.nil? %>
     <p><%= comment.user.name %>:</p>
     <p><%= comment.text %></p>
-  <% else %>
-    <p>There's no comments yet</p>
-  <% end %>
 </li>

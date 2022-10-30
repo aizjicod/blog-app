@@ -6,10 +6,14 @@
   <ul class="post-ul">
     <% @user.posts.each do |post| %>
       <%= link_to(user_post_url(id: post.id), :class => "link-pages") do %>
-          <%= render post %>
-          <ul class="comments-ul">
+        <%= render post %>
+        <ul class="comments-ul">
+          <% if comments?(post.comments) %>
             <%= render partial: "comments/comment", collection: post.recent_comments %>
-          </ul>
+          <% else %>
+            <p>No comments available</p>
+          <% end %>
+        </ul>
       <% end %>
     <% end %>
   </ul>

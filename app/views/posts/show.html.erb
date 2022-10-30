@@ -11,7 +11,11 @@
     </div>
   </div>
   <ul class="comments-ul">
+  <% if comments?(@post.comments) %>
     <%= render partial: "comments/comment", collection: @post.comments %>
+    <% else %>
+    <p>No comments available</p>
+    <% end %>
   </ul>
   <%= render "forms/form" %>
 </div>
