@@ -5,7 +5,6 @@ class LikesController < ApplicationController
     @like = Like.new
     @like.user_id = current_user.id
     @like.post_id = params[:post_id]
-    pp params
 
     if @like.save
       redirect_to user_post_path(@user, @post)

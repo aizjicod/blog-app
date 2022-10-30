@@ -1,0 +1,8 @@
+.like-btn {
+  width: 25px;
+  fill: #800;
+}
+
+.like-btn:hover {
+  fill: #800;
+}
