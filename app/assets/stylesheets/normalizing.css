@@ -19,3 +19,15 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.back-link {
+  font-size: 2em;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 3%;
+  font-weight: 900;
+}
+
+.back-link:hover {
+  color: #808
+}
