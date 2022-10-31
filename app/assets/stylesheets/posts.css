@@ -1,18 +1,17 @@
 :root {
-  --color-alpha: #222222;
+  --color-alpha: #222;
   --color-secondary: #808;
 }
 
 /* posts styles */
 .box {
   position: relative;
-  background-color: rgba(#000, 0.5);
   padding: 5px;
   border: 2px solid var(--color-alpha);
 }
 
-.box:before,
-.box:after {
+.box::before,
+.box::after {
   content: "•";
   position: absolute;
   width: 14px;
@@ -26,11 +25,11 @@
   z-index: 50;
 }
 
-.box:before {
+.box::before {
   left: 12px;
 }
 
-.box:after {
+.box::after {
   right: 12px;
 }
 
@@ -40,8 +39,8 @@
   padding: 40px;
 }
 
-.box-inner:before,
-.box-inner:after {
+.box-inner::before,
+.box-inner::after {
   content: "•";
   position: absolute;
   width: 14px;
@@ -54,11 +53,11 @@
   text-align: center;
 }
 
-.box-inner:before {
+.box-inner::before {
   left: -2px;
 }
 
-.box-inner:after {
+.box-inner::after {
   right: -2px;
 }
 
@@ -105,7 +104,7 @@
   padding: 0 50px 50px;
 }
 
-@media  screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .post-container {
     width: 80%;
   }

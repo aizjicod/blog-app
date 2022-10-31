@@ -25,17 +25,17 @@
 }
 
 .comment-input {
- width: 100%;
- display: flex;
- justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .comment-input input {
- padding: 0.5em 1em;
- outline: 0;
- border: 0;
- background: transparent;
- border-bottom: 1px solid #222222;
+  padding: 0.5em 1em;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid #222;
 }
 
 .comment-input input:hover,
