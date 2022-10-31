@@ -18,7 +18,7 @@
 #navbar {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 35px;
 }
 
 .navbar-li {
@@ -36,7 +36,7 @@
   transition: all 0.3s;
 }
 
-.navbar-li:hover > .header-a {
+.header-a:hover {
   color: #880088;
   transform: scale(1.2);
 }
