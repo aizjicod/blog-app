@@ -1,4 +1,4 @@
-<%= link_to "Back", user_posts_path , :class => "link-pages" %>
+<%= link_to "Back", user_posts_path , :class => "link-pages back-link" %>
 <div id="post-show">
   <div class="post-container box">
     <div class="box-inner">
@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <ul class="comments-ul">
+  <ul class="comments-ul post-show-comments">
   <% if comments?(@post.comments) %>
     <%= render partial: "comments/comment", collection: @post.comments %>
     <% else %>

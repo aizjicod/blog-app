@@ -68,6 +68,7 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 35px;
+  margin-bottom: 20px;
 }
 
 .post-container {
@@ -102,7 +103,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
-  padding: 0 0 50px;
+  padding: 0 50px 50px;
 }
 
 .pagination-btn {
