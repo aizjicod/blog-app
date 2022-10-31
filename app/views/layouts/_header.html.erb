@@ -1,0 +1,20 @@
+<header id="header">
+  <%=  link_to image_tag(image_path("logo.png"), class: "header_img"), "/"%> 
+  <ul id="navbar">
+    <li class="navbar-li">
+      <%= link_to "Home", "/", class: "header-a" %>
+    </li>
+    <li class="navbar-li">
+      <%= link_to "Profile", "/", class: "header-a" %>
+    </li>
+    <% if log_in? %>
+      <li class="navbar-li">
+        <%= link_to "Create a new post", new_user_post_path(user_id: current_user), class: "header-a" %>
+      </li>
+    <% end %>
+  </ul>
+
+  <li class="navbar-li">
+      <%= link_to "log-in/log-out", "/", class: "header-a" %>
+  </li>
+</header>

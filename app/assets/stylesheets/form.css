@@ -1,0 +1,44 @@
+#form {
+  margin-top: 50px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.like-btn {
+  width: 25px;
+  fill: #800;
+  position: relative;
+  top: -4px;
+}
+
+.like-btn:hover {
+  fill: #800;
+}
+
+.comment-form {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.comment-input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-input input {
+  padding: 0.5em 1em;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid #222;
+}
+
+.comment-input input:hover,
+.comment-input input:focus {
+  background: #dedede;
+}

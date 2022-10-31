@@ -1,8 +1,10 @@
-<li class="post-container">
-    <p class="post-number">Post #<%= post.id %></p>
+<li class="post-container box">
+  <div class="box-inner">
+    <p class="post-number"><%= post.title %></p>
     <p class="post-description"><%= post.text[0...250] %></p>
     <div class="post-interactions">
     <p>Comments: <%= post.comments_counter %></p>
     <p>Likes: <%= post.likes_counter %></p>
     </div>
+  </div>
 </li>

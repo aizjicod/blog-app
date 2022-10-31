@@ -1,17 +1,28 @@
-<h1>post</h1>
-<h2>user's selected post</h2>
-<%= link_to "Back", :back , :class => "link-pages" %>
+<%= link_to "Back", user_posts_path , :class => "link-pages back-link" %>
 <div id="post-show">
-  <div class="post-container">
-    <p class="post-number">Post #<%= @post.id %></p>
-    <p class="post-description"><%= @post.text %></p>
-    <div class="post-interactions">
-      <p>Comments: <%= @post.comments_counter %></p>
-      <p>Likes: <%= @post.likes_counter %></p>
+  <div class="post-container box">
+    <div class="box-inner">
+      <p class="post-number">Post #<%= @post.id %></p>
+      <p class="post-description"><%= @post.text %></p>
+      <div class="post-interactions">
+        <p>Comments: <%= @post.comments_counter %></p>
+        <p>
+        <%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form| %>
+          <div>
+            <%= form.submit "like", :type => :image, :src => image_path("like-btn.svg"), class: "like-btn"%><br>
+          </div>
+        <% end %>
+        <%= @post.likes_counter %>
+        </p>
+      </div>
     </div>
   </div>
-  <ul class="comments-ul">
+  <ul class="comments-ul post-show-comments">
+  <% if comments?(@post.comments) %>
     <%= render partial: "comments/comment", collection: @post.comments %>
+    <% else %>
+    <p>No comments available</p>
+    <% end %>
   </ul>
   <%= render "forms/form" %>
 </div>

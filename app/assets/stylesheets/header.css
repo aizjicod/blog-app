@@ -1,0 +1,43 @@
+#header {
+  background: #222;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10%;
+  z-index: 9999;
+}
+
+.header_img {
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.navbar-li {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 900;
+  list-style: none;
+}
+
+.header-a {
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.header-a:hover {
+  color: #808;
+  transform: scale(1.2);
+}

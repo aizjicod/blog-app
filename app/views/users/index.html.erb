@@ -1,8 +1,7 @@
-<h1>users</h1>
-<h2>this is a list of users</h2>
-  <%= link_to "Create a new post", new_user_post_path(user_id: @current_user.id) %>
-<% @users.each do |user| %>
-  <%= link_to(user, :class => "link-pages") do %>
-   <%= render user %>
+<div id="users-list">
+  <% @users.each do |user| %>
+    <%= link_to(user, :class => "link-pages") do %>
+    <%= render user %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

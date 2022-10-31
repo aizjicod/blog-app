@@ -1,17 +1,19 @@
-<h1>post</h1>
-<h2>user's posts</h2>
-<%= link_to "Back", :back , :class => "link-pages" %>
+<%= link_to "Back", user_path(id: params["user_id"]), :class => "link-pages back-link" %>
 <div id="user-posts-container">
   <%= render partial: "users/user", locals: { user: @user }  %>
   <ul class="post-ul">
     <% @user.posts.each do |post| %>
       <%= link_to(user_post_url(id: post.id), :class => "link-pages") do %>
-          <%= render post %>
-          <ul class="comments-ul">
+        <%= render post %>
+        <ul class="comments-ul">
+          <% if comments?(post.comments) %>
             <%= render partial: "comments/comment", collection: post.recent_comments %>
-          </ul>
+          <% else %>
+            <p>No comments available</p>
+          <% end %>
+        </ul>
       <% end %>
     <% end %>
   </ul>
-  <button class="pagination-btn">Pagination</button>
+  <button class="btn">Pagination</button>
 </div>
