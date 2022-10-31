@@ -1,5 +1,7 @@
-<% @users.each do |user| %>
-  <%= link_to(user, :class => "link-pages") do %>
-   <%= render user %>
+<div id="users-list">
+  <% @users.each do |user| %>
+    <%= link_to(user, :class => "link-pages") do %>
+    <%= render user %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

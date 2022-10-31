@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+#users-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#users-list .link-pages{
+  width: 100%;
+}
+
 .user-container {
   width: 100%;
   padding: 20px;
@@ -6,23 +18,49 @@
   gap: 10%;
 }
 
+.user-container:hover > .user-information h2,
+.user-container:hover > .user-information p {
+  color: #880088;
+}
+
 .user-photo {
-  border: 2px solid #000;
-  height: 200px;
+  height: 100px;
+  --s: 10px; /* control the size */
+  padding: var(--s);
+  border: calc(2*var(--s)) solid #0000;
+  outline: 1px solid #000;
+  outline-offset: calc(-1*var(--s));
+  background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
 }
 
 .user-information {
-  border: 2px solid #000;
   flex: 1;
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
+  /* adding border styles */
+  --s: 10px; /* control the size */
+  border: calc(2*var(--s)) solid #0000;
+  outline: 1px solid #000;
+  outline-offset: calc(-1*var(--s));
+  background: conic-gradient(from 90deg at 1px 1px,#0000 25%,#000 0);
 }
 
 .user-information h2 {
-  font-size: 2em;
+  width: 100%;
+  font-size: 4em;
   font-weight: 900;
+  font-family: 'Secular One', sans-serif;
+  transition: all 0.3s;
+}
+
+.user-information p {
+  font-size: 1.5em;
+  font-weight: 900;
+  font-family: 'Secular One', sans-serif;
+  transition: all 0.3s;
 }
 
 #show-user {
@@ -63,4 +101,13 @@
 .post-button:hover {
   background: #000;
   color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  #users-list {
+    padding: 0 100px;
+  }
+  .user-photo {
+    height: 200px;
+  }
 }
