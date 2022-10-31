@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   def current_user
     User.first
   end
+
   def log_in?
     true
   end
