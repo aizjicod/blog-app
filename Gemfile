@@ -9,11 +9,17 @@ gem 'rails', '~> 7.0.4'
 
 # Use an erb formater
 gem 'htmlbeautifier'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+
+# Use to help] increase application's performance
+gem 'uniform_notifier', '~> 1.12', '>= 1.12.1'
+gem 'xmpp4r', '~> 0.5.6'
+gem 'bullet', group: 'development'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
