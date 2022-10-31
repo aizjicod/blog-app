@@ -6,7 +6,14 @@
       <p class="post-description"><%= @post.text %></p>
       <div class="post-interactions">
         <p>Comments: <%= @post.comments_counter %></p>
-        <p>Likes: <%= @post.likes_counter %></p>
+        <p>
+        <%= form_with model: @like, url: user_post_likes_path(@user, @post) do |form| %>
+          <div>
+            <%= form.submit "like", :type => :image, :src => image_path("like-btn.svg"), class: "like-btn"%><br>
+          </div>
+        <% end %>
+        <%= @post.likes_counter %>
+        </p>
       </div>
     </div>
   </div>
