@@ -2,7 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Users response', type: :request do
   describe '/users' do
-    before(:example) { get '/users' }
+    before(:example) do
+      User.create(
+        id: 1,
+        name: 'Alejandro Torres',
+        photo: 'https://randomuser.me/api/portraits/men/9.jpg',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      )
+      get '/users'
+    end  
 
     it 'get /users has correct status' do
       expect(response).to have_http_status(200)
@@ -22,7 +30,15 @@ RSpec.describe 'Users response', type: :request do
   end
 
   describe '/users/id' do
-    before(:example) { get '/users/1' }
+    before(:example) do
+      User.create(
+        id: 1,
+        name: 'Alejandro Torres',
+        photo: 'https://randomuser.me/api/portraits/men/9.jpg',
+        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      )
+      get '/users/1' 
+    end 
 
     it 'get /users/1 has correct status' do
       expect(response).to have_http_status(200)

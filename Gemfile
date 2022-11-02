@@ -17,9 +17,9 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use to help] increase application's performance
+gem 'bullet', group: 'development'
 gem 'uniform_notifier', '~> 1.12', '>= 1.12.1'
 gem 'xmpp4r', '~> 0.5.6'
-gem 'bullet', group: 'development'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -59,6 +59,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
