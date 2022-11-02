@@ -1,5 +1,6 @@
 <%= link_to "Back", user_posts_path , :class => "link-pages back-link" %>
 <div id="post-show">
+  <%= render partial: "users/user", locals: { user: @user }  %>
   <div class="post-container box">
     <div class="box-inner">
       <p class="post-number">Post #<%= @post.id %></p>
