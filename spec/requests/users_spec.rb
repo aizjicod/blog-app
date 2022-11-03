@@ -10,7 +10,7 @@ RSpec.describe 'Users response', type: :request do
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       )
       get '/users'
-    end  
+    end
 
     it 'get /users has correct status' do
       expect(response).to have_http_status(200)
@@ -37,8 +37,8 @@ RSpec.describe 'Users response', type: :request do
         photo: 'https://randomuser.me/api/portraits/men/9.jpg',
         bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       )
-      get '/users/1' 
-    end 
+      get '/users/1'
+    end
 
     it 'get /users/1 has correct status' do
       expect(response).to have_http_status(200)

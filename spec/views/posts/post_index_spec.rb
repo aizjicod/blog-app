@@ -4,32 +4,27 @@ RSpec.describe 'Posts', type: :feature do
     before(:example) do
       @user = User.create(id: 1, name: 'Alejandro Torres',
                           photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
-                          Post.create(
-                            id: 1,
-                            title: "1-Post",
-                            text: "first post",
-                            user_id: 1)
-                          Post.create(
-                            id: 2,
-                            title: "2-Post",
-                            text: "second post",
-                            user_id: 1)
-                          Post.create(
-                            id: 3,
-                            title: "3-Post",
-                            text: "third post",
-                            user_id: 1)
-                            Comment.create(
-                              user_id: 1,
-                              post_id: 1,
-                              text: "Phasellus dapibus a dui at euismod." )
-                            Comment.create(
-                              user_id: 1,
-                              post_id: 1,
-                              text: "Phasellus dapibus a dui at euismod.2" )
-                              Like.create(user_id: 1, post_id: 1)
-                              Like.create(user_id: 1, post_id: 1)
-                              Like.create(user_id: 1, post_id: 1)
+      3.times do |number|
+        Post.create(
+          id: number,
+          title: "#{number}-Post",
+          text: "#{number}-number-post",
+          user_id: 1
+        )
+      end
+      Comment.create(
+        user_id: 1,
+        post_id: 1,
+        text: 'Phasellus dapibus a dui at euismod.'
+      )
+      Comment.create(
+        user_id: 1,
+        post_id: 1,
+        text: 'Phasellus dapibus a dui at euismod.2'
+      )
+      3.times do |_i|
+        Like.create(user_id: 1, post_id: 1)
+      end
       visit '/users/1/posts'
     end
     it 'Is response status correct' do
@@ -45,7 +40,7 @@ RSpec.describe 'Posts', type: :feature do
       expect(page).to have_content('Posts: 3')
     end
     it 'Is showing some of a post body' do
-      expect(page).to have_content('third post')
+      expect(page).to have_content('0-number-post')
     end
     it 'Is showing some of a post comments' do
       expect(page).to have_content('Phasellus dapibus a dui at euismod.2')
@@ -60,13 +55,13 @@ RSpec.describe 'Posts', type: :feature do
       expect(page).to have_content('Pagination')
     end
     it 'Is showing user\'\s lasts post' do
-      expect(page.body).to have_content('1-Post')
-      expect(page.body).to include('2-Post')
-      expect(page.body).to have_content('3-Post')
+      expect(page.body).to have_content('0-Post')
+      expect(page.body).to include('1-Post')
+      expect(page.body).to have_content('2-Post')
     end
     it 'Is redirecting to user show' do
-      click_link '1-Post'
-      expect(page.current_path).to eql('/users/1/posts/1')
+      click_link '0-Post'
+      expect(page.current_path).to eql('/users/1/posts/0')
     end
   end
 end

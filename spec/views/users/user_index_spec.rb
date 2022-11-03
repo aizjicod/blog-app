@@ -3,9 +3,9 @@ RSpec.describe 'Users', type: :feature do
   describe 'Index' do
     before(:example) do
       @user1 = User.create(id: 1, name: 'Alejandro Torres',
-                          photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
+                           photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
       @user2 = User.create(id: 2, name: 'Karen',
-                          photo: 'https://www.example.com/image', bio: 'Teacher from India')
+                           photo: 'https://www.example.com/image', bio: 'Teacher from India')
       visit '/users'
     end
     it 'Is response status correct' do

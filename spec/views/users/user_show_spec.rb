@@ -1,25 +1,27 @@
-
 require 'rails_helper'
 RSpec.describe 'Users', type: :feature do
   describe 'Show' do
     before(:example) do
       @user = User.create(id: 1, name: 'Alejandro Torres',
                           photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
-                          Post.create(
-                            id: 1,
-                            title: "1-Post",
-                            text: "first post",
-                            user_id: 1)
-                          Post.create(
-                            id: 2,
-                            title: "2-Post",
-                            text: "second post",
-                            user_id: 1)
-                          Post.create(
-                            id: 3,
-                            title: "3-Post",
-                            text: "third post",
-                            user_id: 1)
+      Post.create(
+        id: 1,
+        title: '1-Post',
+        text: 'first post',
+        user_id: 1
+      )
+      Post.create(
+        id: 2,
+        title: '2-Post',
+        text: 'second post',
+        user_id: 1
+      )
+      Post.create(
+        id: 3,
+        title: '3-Post',
+        text: 'third post',
+        user_id: 1
+      )
       visit '/users/1'
     end
     it 'Is response status correct' do

@@ -1,37 +1,33 @@
 require 'rails_helper'
 RSpec.describe 'Posts', type: :feature do
-  describe 'Index' do
+  describe 'show' do
     before(:example) do
       @user = User.create(id: 1, name: 'Alejandro Torres',
                           photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
-                          User.create(id: 2, name: 'Karen',
-                          photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
-                          Post.create(
-                            id: 1,
-                            title: "1-Post",
-                            text: "first post",
-                            user_id: 1)
-                          Post.create(
-                            id: 2,
-                            title: "2-Post",
-                            text: "second post",
-                            user_id: 1)
-                          Post.create(
-                            id: 3,
-                            title: "3-Post",
-                            text: "third post",
-                            user_id: 1)
-                            Comment.create(
-                              user_id: 2,
-                              post_id: 1,
-                              text: "Phasellus dapibus a dui at euismod." )
-                            Comment.create(
-                              user_id: 2,
-                              post_id: 1,
-                              text: "Phasellus dapibus a dui at euismod.2" )
-                              Like.create(user_id: 1, post_id: 1)
-                              Like.create(user_id: 1, post_id: 1)
-                              Like.create(user_id: 1, post_id: 1)
+      User.create(id: 2, name: 'Karen',
+                  photo: 'https://www.example.com/image', bio: 'Teacher from Colombia')
+      3.times do |number|
+        Post.create(
+          id: number,
+          title: "#{number}-Post",
+          text: "#{number}-number-post",
+          user_id: 1
+        )
+      end
+      Comment.create(
+        user_id: 2,
+        post_id: 1,
+        text: 'Phasellus dapibus a dui at euismod.'
+      )
+      Comment.create(
+        user_id: 2,
+        post_id: 1,
+        text: 'Phasellus dapibus a dui at euismod.2'
+      )
+
+      Like.create(user_id: 1, post_id: 1)
+      Like.create(user_id: 1, post_id: 1)
+      Like.create(user_id: 1, post_id: 1)
       visit '/users/1/posts/1'
     end
     it 'Is response status correct' do
@@ -50,7 +46,7 @@ RSpec.describe 'Posts', type: :feature do
       expect(page.body).to have_content('3')
     end
     it 'Is showing post body' do
-      expect(page.body).to have_content('first post')
+      expect(page.body).to have_content('1-number-post')
     end
     it 'Is showing user posts count' do
       expect(page).to have_content('Posts: 3')
