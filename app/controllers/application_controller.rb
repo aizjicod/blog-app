@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in?
-    true
+    false
   end
 end
