@@ -7,14 +7,18 @@
     <li class="navbar-li">
       <%= link_to "Profile", "/", class: "header-a" %>
     </li>
-    <% if log_in? %>
      <li class="navbar-li">
+      <% if signed_in? %>
         <%= link_to "Create a new post", new_user_post_path(user_id: current_user), class: "header-a" %>
-      </li>
-    <% end %>
+      <% end %>
+    </li>
   </ul>
 
   <li class="navbar-li">
-      <%= link_to "log-in/log-out", "/", class: "header-a" %>
+    <% if signed_in? %>
+      <%= link_to "log-out", destroy_user_session_path, method: :delete, class: "header-a" %>
+    <% else %>
+      <%= link_to "log-in", new_user_registration_path, class: "header-a" %>
+    <% end %>
   </li>
 </header>
