@@ -54,6 +54,8 @@ Rails.application.configure do
   # change to true to allow email to be sent during development
   
   # smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
