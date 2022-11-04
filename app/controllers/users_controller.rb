@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.recent_posts.includes(comments: [:user])
     @show_all = false
   end
 
