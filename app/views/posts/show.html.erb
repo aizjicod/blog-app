@@ -37,5 +37,7 @@
     <p>No comments available</p>
     <% end %>
   </ul>
+  <% if can? :create, Comment %>
   <%= render "forms/form" %>
+  <% end %>
 </div>
