@@ -285,7 +285,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   debug
-  devise
+  devise (~> 4.2)
   htmlbeautifier
   importmap-rails
   jbuilder

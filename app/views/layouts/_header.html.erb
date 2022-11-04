@@ -16,9 +16,9 @@
 
   <li class="navbar-li">
   <% if signed_in? %>
-        <%= link_to "logout", logout_path, method: :delete, class: "header-a" %>
+         <%= link_to "logout", destroy_user_session_path, method: :delete, class: "header-a" %>
       <% else %>
-        <%# <%= link_to "log-in", new_user_registration_path, class: "header-a" %> %>
+        <%= link_to "log-in", new_user_registration_path, class: "header-a" %>
       <% end %>
      
   </li>
