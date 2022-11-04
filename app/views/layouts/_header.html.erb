@@ -16,7 +16,7 @@
 
   <li class="navbar-li">
   <% if signed_in? %>
-         <%= link_to "logout", destroy_user_session_path, method: :delete, class: "header-a" %>
+         <%= link_to "logout", logout_path, method: :delete, class: "header-a" %>
       <% else %>
 
         <%= link_to "confirmation-email", "http://127.0.0.1:1080/", class: "header-a" %>
