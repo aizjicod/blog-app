@@ -24,8 +24,15 @@
     </div>
   </div>
   <ul class="comments-ul post-show-comments">
-  <% if comments?(@post.comments) %>
-    <%= render partial: "comments/comment", collection: @post.comments %>
+    <% if comments?(@post.comments) %>
+    <% @post.comments.each do |comment| %>
+    <%= render comment %>
+        <% if can? :destroy, comment %>
+            <%= form_with model: Comment, url: user_post_comment_path(@user, @post,comment), method: :delete do |form| %>
+              <%= form.submit "Delete Comment", class: "delete-button" %>
+            <% end %>
+        <% end %>
+    <% end %>
     <% else %>
     <p>No comments available</p>
     <% end %>

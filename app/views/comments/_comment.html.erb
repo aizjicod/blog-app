@@ -1,9 +1,4 @@
 <li class="comment-li" >
     <p><%= comment.user.name %>:</p>
     <p><%= comment.text %></p>
-    <% if can? :destroy, comment %>
-        <%= form_with model: Comment, url: user_post_comment_path(@user, @post), method: :delete do |form| %>
-          <%= form.submit "Delete Comment", class: "delete-button" %>
-        <% end %>
-      <% end %>
 </li>
