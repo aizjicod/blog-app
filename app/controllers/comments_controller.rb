@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       p 'not saved'
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id]).destroy
 
@@ -20,5 +20,4 @@ class CommentsController < ApplicationController
       format.html { redirect_to user_post_path(current_user), notice: 'Comment deleted!' }
     end
   end
-
 end
