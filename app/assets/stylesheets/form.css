@@ -38,7 +38,81 @@
   border-bottom: 1px solid #222;
 }
 
+.field input,
+.actions {
+  width: 80%;
+  text-align: center;
+  padding: 8px;
+}
+
 .comment-input input:hover,
 .comment-input input:focus {
   background: #dedede;
+}
+
+/* new user form  */
+#form-h2 {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#new_user {
+  display: flex;
+  width: 100%;
+  padding: 2% 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.field label,
+.field em {
+  width: 100%;
+  text-align: center;
+}
+
+.log-in-div {
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-in-div .field {
+  width: 70%;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.log-in-div .field label {
+  width: max-content;
+}
+
+#form-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding-bottom: 50px;
+}
+
+#form-links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+#form-links a:hover {
+  color: #800;
 }
