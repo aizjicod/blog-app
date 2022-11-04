@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   after_save :update_post_counter
   validates :title, presence: true, length: { maximum: 250, too_long: ' 250 characters is the maximum allowed' }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

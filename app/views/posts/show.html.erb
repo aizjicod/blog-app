@@ -16,6 +16,11 @@
         <%= @post.likes_counter %>
         </p>
       </div>
+      <% if can? :destroy, @post %>
+        <%= form_with model: Post, url: user_post_path(@user, @post), method: :delete do |form| %>
+          <%= form.submit "Delete Post", class: "delete-button" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <ul class="comments-ul post-show-comments">
