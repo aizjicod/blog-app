@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "/logout", :to => "devise/sessions#destroy"
   end
+  # web routes
   root to: "users#index"
   resources :users do
     resources :posts do
