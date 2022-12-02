@@ -9,8 +9,8 @@ A blog app created with RoR.
 * Ruby version used `ruby 3.1.2`
 
 - Clone the repository by running
-**ssh** `git clone git@github.com:Nyame-Wolf/the-blog.git`
-**html** `https://github.com/Nyame-Wolf/the-blog.git` in your CLI.
+**ssh** `git@github.com:aizjicod/blog-app.git`
+**https** `https://github.com/aizjicod/blog-app.git` in your CLI.
 - `cd blog-app`
 - Run `bundle install`
 - Run `rails server`
